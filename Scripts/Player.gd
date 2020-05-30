@@ -1,17 +1,17 @@
 extends KinematicBody2D
 
-var speed = 200
-var target = null
-var velocity = Vector2.ZERO
+export var speed = 200
+export var img_size = 0.5
 
-func _input(event):
-	if event.is_action_pressed('click'):
-		target = event.position
+onready var collider = $CollisionShape2D
+onready var sprite = $Sprite
+onready var joystick = get_parent().get_node("Joystick/JoystickButton")
 
-func _physics_process(delta):
-	if target:
-		look_at(target)
-		velocity = transform.x * speed
-		# stop moving if we get close to the target
-		if position.distance_to(target) > 5:
-			velocity = move_and_slide(velocity)
+func _ready():
+	collider.scale = Vector2(img_size, img_size)
+	sprite.scale = Vector2(img_size, img_size)
+
+
+func _process(delta):
+	# @TODO - Make Player Rotate
+	move_and_slide(joystick.get_value() * speed)
