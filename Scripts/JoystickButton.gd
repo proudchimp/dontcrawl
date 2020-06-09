@@ -1,9 +1,9 @@
 extends TouchScreenButton
 
-
+ # @TODO Accept input system from anywhere on the screen
 export var button_velocity = 20
 var _radius = Vector2(32,32)
-var _boundary = 48
+var _boundary = 512
 var _ongoing_drag = -1
 export var _threshold = 10
 
@@ -36,4 +36,4 @@ func _input(event):
 func get_value():
 	if get_button_pos().length() > _threshold:
 		return get_button_pos().normalized()
-	return Vector2(0,0)
+	return Vector2.ZERO

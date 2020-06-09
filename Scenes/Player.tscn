@@ -1,27 +1,21 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Assets/handgun/idle/survivor-idle_handgun_0.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Player/Player.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=2]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 37.3324
-height = 9.73951
+radius = 4.90293
+height = 4.50974
 
 [node name="Player" type="KinematicBody2D"]
-position = Vector2( 15.0941, 3.33341 )
+position = Vector2( 0, 0.347215 )
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
-img_size = 0.8
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-modulate = Color( 0.858824, 0.105882, 0.145098, 1 )
-self_modulate = Color( 0.721569, 0.0666667, 0.0666667, 1 )
-position = Vector2( -4.78986, 3.5903 )
-rotation = 1.5708
-shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 0.5, 0.5 )
+position = Vector2( 0, -7 )
 texture = ExtResource( 1 )
+hframes = 60
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = -1.5708
+shape = SubResource( 1 )
