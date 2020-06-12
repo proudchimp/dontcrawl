@@ -3,7 +3,7 @@ extends TouchScreenButton
  # @TODO Accept input system from anywhere on the screen
 export var button_velocity = 20
 var _radius = Vector2(32,32)
-var _boundary = 512
+var _boundary = 64
 var _ongoing_drag = -1
 export var _threshold = 10
 
