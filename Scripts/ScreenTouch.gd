@@ -1,8 +1,7 @@
 extends TouchScreenButton
 
-signal event_position(target_position)
+signal target_position(event_position)
 
 func _input(event):
 	if event is InputEventScreenTouch or event is InputEventMouseButton:
-		if event.is_pressed():
-			emit_signal("event_position", event.position)
+		emit_signal("target_position", event.position)
